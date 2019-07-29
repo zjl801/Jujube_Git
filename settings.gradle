@@ -1,1 +1,1 @@
-include ':app', ':jujube-utils', ':jujube-photopiker', ':jujube_filter'
+include ':app', ':jujube-utils', ':jujube_filter'
