@@ -1,0 +1,91 @@
+apply plugin: 'com.android.library'
+//apply plugin: 'com.novoda.bintray-release'
+apply plugin: 'kotlin-android'
+//JitPack:在要上传的library的build.gralde文件添加如下代码：
+//JitPack Maven
+apply plugin: 'com.github.dcendents.android-maven'
+// Your Group
+group = 'com.github.zjl801'
+
+android {
+    compileSdkVersion 28
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+
+    lintOptions {
+        abortOnError false//忽略错误信息
+        checkReleaseBuilds false
+    }
+}
+
+/**
+ * 打Jar包的一套
+ */
+//task makeJar(type: Copy) {
+//    delete 'build/libs/jujubelog.jar'
+//    from('build/intermediates/packaged-classes/release/')
+//    into('build/libs/')
+//    include('classes.jar')
+//    rename('classes.jar', 'jujubelog.jar')
+//}
+//makeJar.dependsOn(build)
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.11"
+    implementation 'com.alibaba:fastjson:1.1.68.android'
+    compileOnly 'com.android.support:recyclerview-v7:28.0.0'
+}
+
+repositories {
+    jcenter()
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+    // 如果有中文注释加入如下代码
+    tasks.withType(Javadoc) {
+        options {
+            encoding "UTF-8"
+            charSet 'UTF-8'
+            links "http://docs.oracle.com/javase/7/docs/api"
+        }
+    }
+}
+
+//配置binary上传基本信息
+//publish {
+//    repoName = 'Jujube'            //bintray仓库名
+//    userOrg = 'suo801'             //bintray注册的用户名
+//    groupId = 'com.bgi.jujube'     //compile引用时的第1部分groupId
+//    artifactId = 'jujube-utils'    //compile引用时的第2部分项目名:项目名称
+//    publishVersion = '1.0.5'       //compile引用时的第3部分版本号,每次更新这里必须修改，不能重复
+//    desc = 'BGI Android UI and Utils Integrated engineering tool'
+//    website = 'https://github.com/zjl801/Jujube'
+//}
