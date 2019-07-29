@@ -337,8 +337,8 @@ public class PhotoViewAttacher implements IPhotoView, View.OnTouchListener,
         // If we don't have an ImageView, call cleanup()
         if (null == imageView) {
             cleanup();
-            L.i(LOG_TAG,
-                    "ImageView no longer exists. You should not use this PhotoViewAttacher any more.");
+//            L.i(LOG_TAG,
+//                    "ImageView no longer exists. You should not use this PhotoViewAttacher any more.");
         }
 
         return imageView;
@@ -394,8 +394,8 @@ public class PhotoViewAttacher implements IPhotoView, View.OnTouchListener,
         }
 
         if (DEBUG) {
-            L.d(LOG_TAG,
-                    String.format("onDrag: dx: %.2f. dy: %.2f", dx, dy));
+//            L.d(LOG_TAG,
+//                    String.format("onDrag: dx: %.2f. dy: %.2f", dx, dy));
         }
 
         ImageView imageView = getImageView();
@@ -431,10 +431,10 @@ public class PhotoViewAttacher implements IPhotoView, View.OnTouchListener,
     public void onFling(float startX, float startY, float velocityX,
                         float velocityY) {
         if (DEBUG) {
-            L.d(
-                    LOG_TAG,
-                    "onFling. sX: " + startX + " sY: " + startY + " Vx: "
-                            + velocityX + " Vy: " + velocityY);
+//            L.d(
+//                    LOG_TAG,
+//                    "onFling. sX: " + startX + " sY: " + startY + " Vx: "
+//                            + velocityX + " Vy: " + velocityY);
         }
         ImageView imageView = getImageView();
         mCurrentFlingRunnable = new FlingRunnable(imageView.getContext());
@@ -481,10 +481,10 @@ public class PhotoViewAttacher implements IPhotoView, View.OnTouchListener,
     @Override
     public void onScale(float scaleFactor, float focusX, float focusY) {
         if (DEBUG) {
-            L.d(
-                    LOG_TAG,
-                    String.format("onScale: scale: %.2f. fX: %.2f. fY: %.2f",
-                            scaleFactor, focusX, focusY));
+//            L.d(
+//                    LOG_TAG,
+//                    String.format("onScale: scale: %.2f. fX: %.2f. fY: %.2f",
+//                            scaleFactor, focusX, focusY));
         }
 
         if ((getScale() < mMaxScale || scaleFactor < 1f) && (getScale() > mMinScale || scaleFactor > 1f)) {
