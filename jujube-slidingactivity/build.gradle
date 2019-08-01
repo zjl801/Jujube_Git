@@ -1,4 +1,6 @@
 apply plugin: 'com.android.library'
+//这两句少了，用不了，找不到
+apply plugin: 'com.github.dcendents.android-maven'
 group = 'com.github.zjl801'
 
 android {
