@@ -1,6 +1,8 @@
 apply plugin: 'com.android.library'
 apply plugin: 'maven'
-
+apply plugin: 'com.github.dcendents.android-maven'
+// Your Group
+group = 'com.github.zjl801'
 dependencies {
     implementation fileTree(include: '*.jar', dir: 'libs')
     implementation "com.android.support:support-v4:28.+"
