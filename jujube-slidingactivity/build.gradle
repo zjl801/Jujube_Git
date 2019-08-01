@@ -30,5 +30,3 @@ dependencies {
 
     implementation 'com.klinkerapps:peekview:1.2.3'
 }
-
-//apply from: 'https://raw.github.com/chrisbanes/gradle-mvn-push/master/gradle-mvn-push.gradle'
