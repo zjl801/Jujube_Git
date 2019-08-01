@@ -10,6 +10,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/LibZxing" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/jujube-slidingactivity" />
             <option value="$PROJECT_DIR$/jujube-utils" />
             <option value="$PROJECT_DIR$/jujube_filter" />
           </set>

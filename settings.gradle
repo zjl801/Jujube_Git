@@ -1,1 +1,1 @@
-include ':app', ':jujube-utils', ':jujube_filter', ':LibZxing'
+include ':app', ':jujube-utils', ':jujube_filter', ':LibZxing', ':jujube-slidingactivity'
